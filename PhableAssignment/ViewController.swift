@@ -30,6 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddContactView))
         navigationItem.rightBarButtonItem = addBarButton
         self.loadItems()
+        self.contactsTable.tableFooterView = UIView()
+
     }
     
     func getDataFromAnotherVC() {
