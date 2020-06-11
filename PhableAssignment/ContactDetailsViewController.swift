@@ -22,6 +22,12 @@ class ContactDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        self.navigationController?.navigationBar.topItem?.title = "Contacts"
+        navigationController?.navigationBar.barTintColor =   UIColor(hexString: "#0b324e")
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         if let firstName = contactsDetails?.firstName , let lastName = contactsDetails?.lastName {
             profilename.text = firstName + lastName
         }
@@ -31,14 +37,12 @@ class ContactDetailsViewController: UIViewController {
         if let email = contactsDetails?.email {
             emailText.text = email
         }
-        if let profileImage = contactsDetails?.profilePic {
-            
-            profilePic.image = UIImage(named: profileImage)
-            profilePic.layer.masksToBounds = false
-            profilePic.layer.cornerRadius = profilePic.frame.height/2
-            profilePic.clipsToBounds = true
-            profilePic.contentMode = .scaleToFill
-        }
+        
+        profilePic.layer.masksToBounds = false
+        profilePic.layer.cornerRadius = profilePic.frame.height/2
+        profilePic.clipsToBounds = true
+        profilePic.contentMode = .scaleToFill
+        
     }
     
     class func storyBoardIdentifier() -> String {
@@ -46,11 +50,13 @@ class ContactDetailsViewController: UIViewController {
     }
     
     @IBAction func emailAction(_ sender: Any) {
+        self.emailButton.setImage(UIImage(named: "selectedEmailImage"), for: .normal)
         if let email = self.emailText.text {
             self.openEmail(email)
         }
     }
     @IBAction func callAction(_ sender: Any) {
+        self.callButton.setImage(UIImage(named: "selectedCallImage"), for: .normal)
         if let phone = self.mobileText.text {
             self.openDialer(phone)
             

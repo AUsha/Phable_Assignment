@@ -19,7 +19,7 @@ class ContactsViewModel {
     
         var isLoadContactsSucceeded: Dynamic<Bool> = Dynamic(false)
     
-    func loadContactsData(firstName: String, lastName: String, phoneNumber: String, email: String) {
+    func loadContactsData(firstName: String, lastName: String, phoneNumber: String, email: String, profilePic: String) {
         contacts.firstName = firstName
         
         contacts.lastName = lastName
@@ -27,6 +27,8 @@ class ContactsViewModel {
         contacts.phoneNumber = phoneNumber
         
         contacts.email = email
+        
+        contacts.profilePic = profilePic
         
         do {
             try realm.write {

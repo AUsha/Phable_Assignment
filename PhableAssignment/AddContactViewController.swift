@@ -15,6 +15,7 @@ protocol  getDataDelegate {
 class AddContactViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var addProfileImage: UIButton!
+    @IBOutlet var navigationBarView: UIView!
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
@@ -22,14 +23,15 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet var firstNameTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
-        
+    
     var contactsViewModel = ContactsViewModel()
-        
+    
     var contactsModelUpdated : ((_ contactData: [ContactsModel]?) -> Void)?
     
     var delegateCustom : getDataDelegate?
-
-
+    
+    var imageString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -37,6 +39,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
         profileImage.contentMode = .scaleToFill
+        self.navigationBarView.backgroundColor = UIColor(hexString: "#0b324e")
     }
     
     class func storyBoardIdentifier() -> String {
@@ -44,9 +47,13 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func doneActionButton(_ sender: Any) {
+        
+        //        let documentsPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        //        let documentsPath = documentsPaths.first
+        
         if let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let phoneNumber = phoneNumberTextField.text, let email = emailTextField.text {
             
-            contactsViewModel.loadContactsData(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, email: email)
+            contactsViewModel.loadContactsData(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, email: email, profilePic: imageString)
         }
         self.delegateCustom?.getDataFromAnotherVC()
         self.dismiss(animated: true, completion: nil)
@@ -69,6 +76,16 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            let imageUrl = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
+            let imageName = imageUrl.lastPathComponent
+            //           let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            //           let photoURL = NSURL(fileURLWithPath: documentDirectory)
+            //           let localPath = photoURL.appendingPathComponent(imageName!)
+            //            print(localPath)
+          
+            imageString = imageName ?? ""
+            print(imageString)
             profileImage.contentMode = .scaleAspectFit
             profileImage.image = pickedImage
             profileImage.contentMode = .scaleToFill
@@ -82,14 +99,36 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
     
-    //    func loadImageFromPath(_ path: NSString) -> UIImage? {
-    //
-    //        let image = UIImage(contentsOfFile: path as String)
-    //
-    //        if image == nil {
-    //            return UIImage()
-    //        } else{
-    //            return image
-    //        }
-    //    }
+    func loadImageFromName(_ imgName: String) -> String {
+        
+        let imgPath = self.getDocumentsDirectory().appendingPathComponent(imgName)
+        //        let image = self.loadImageFromPath(imgPath as NSString)
+        //        return image
+        return imgPath
+    }
+    
+    func loadImageFromPath(_ path: NSString) -> UIImage? {
+        
+        let image = UIImage(contentsOfFile: path as String)
+        
+        if image == nil {
+            return UIImage()
+        } else{
+            return image
+        }
+    }
+    
+    func getDocumentsDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0]
+        //print("Path: \(documentsDirectory)")
+        return documentsDirectory as NSString
+    }
+}
+extension Optional where Wrapped == URL {
+    func toString() -> String {
+        guard let val = self else { return "" }
+        
+        return "\(val.path)"
+    }
 }

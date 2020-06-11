@@ -58,7 +58,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NCZ-TM-V1i"/>
                                         </constraints>
-                                        <state key="normal" title="Cancel"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancelActionButton:" destination="UMq-ar-ig5" eventType="touchUpInside" id="ifN-jq-fjU"/>
                                         </connections>
@@ -68,7 +70,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="qSk-nh-RSn"/>
                                         </constraints>
-                                        <state key="normal" title="Done"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="doneActionButton:" destination="UMq-ar-ig5" eventType="touchUpInside" id="YCQ-8L-ce4"/>
                                         </connections>
@@ -76,7 +80,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDi-Rb-je7">
                                         <rect key="frame" x="157" y="15" width="100" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -201,6 +205,7 @@
                         <outlet property="emailTextField" destination="SZi-8b-N7x" id="3H5-Va-OCK"/>
                         <outlet property="firstNameTextField" destination="A2j-u4-S8k" id="Gti-cS-Z2Z"/>
                         <outlet property="lastNameTextField" destination="lLf-pA-OxF" id="00N-gV-JWu"/>
+                        <outlet property="navigationBarView" destination="Q0F-w2-ZYK" id="5Zf-o6-8Cr"/>
                         <outlet property="phoneNumberTextField" destination="tPx-A4-Yvh" id="elR-zi-g8W"/>
                         <outlet property="profileImage" destination="RLE-KJ-HBg" id="4HF-YQ-R4e"/>
                     </connections>
@@ -218,13 +223,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usha Manga Devi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2h-5b-M54">
-                                <rect key="frame" x="113.5" y="120" width="187" height="27.5"/>
+                                <rect key="frame" x="113.5" y="150" width="187" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-wq-a5b">
-                                <rect key="frame" x="154.5" y="163.5" width="105" height="30"/>
+                                <rect key="frame" x="154.5" y="193.5" width="105" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RO-lH-keY">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -232,7 +237,7 @@
                                             <constraint firstAttribute="height" constant="30" id="EYT-Vq-AOu"/>
                                             <constraint firstAttribute="width" constant="30" id="hGT-P7-KGU"/>
                                         </constraints>
-                                        <state key="normal" image="outline_call_black_24pt_1x"/>
+                                        <state key="normal" image="callGray"/>
                                         <connections>
                                             <action selector="callAction:" destination="urp-dx-Q2n" eventType="touchUpInside" id="Ft1-ea-yo3"/>
                                         </connections>
@@ -243,7 +248,7 @@
                                             <constraint firstAttribute="height" constant="30" id="7f8-zV-HR1"/>
                                             <constraint firstAttribute="width" constant="30" id="e8D-rW-M59"/>
                                         </constraints>
-                                        <state key="normal" image="outline_email_black_24pt_2x"/>
+                                        <state key="normal" image="emailGray"/>
                                         <connections>
                                             <action selector="emailAction:" destination="urp-dx-Q2n" eventType="touchUpInside" id="JLx-rt-72u"/>
                                         </connections>
@@ -251,57 +256,57 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRJ-iQ-hTh">
-                                <rect key="frame" x="0.0" y="203.5" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="233.5" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="CBf-Rq-LHk"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVs-0U-gdT">
-                                <rect key="frame" x="16" y="216.5" width="58.5" height="23"/>
+                                <rect key="frame" x="16" y="246.5" width="58.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh1-nx-GR8">
-                                <rect key="frame" x="16" y="243.5" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="273.5" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57w-jG-eRo">
-                                <rect key="frame" x="0.0" y="274" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="299.5" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="tjO-RZ-9U4"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5h-O5-pk0">
-                                <rect key="frame" x="16" y="285" width="40" height="20.5"/>
+                                <rect key="frame" x="16" y="310.5" width="40" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qr-yn-8YA">
-                                <rect key="frame" x="16" y="309.5" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="335" width="33" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqI-ef-6rw">
-                                <rect key="frame" x="0.0" y="340" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="361" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="JUp-Lz-i8D"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_account_circle_white_24pt_1x.png" translatesAutoresizingMaskIntoConstraints="NO" id="fS9-HW-XJu">
-                                <rect key="frame" x="187" y="64" width="40" height="40"/>
+                                <rect key="frame" x="172" y="64" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="HUm-Vt-Hla"/>
+                                    <constraint firstAttribute="height" constant="70" id="HUm-Vt-Hla"/>
                                     <constraint firstAttribute="width" secondItem="fS9-HW-XJu" secondAttribute="height" multiplier="1:1" id="pky-ed-bzp"/>
-                                    <constraint firstAttribute="width" constant="40" id="qqq-aD-wet"/>
+                                    <constraint firstAttribute="width" constant="70" id="qqq-aD-wet"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -355,6 +360,9 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -369,7 +377,7 @@
     <resources>
         <image name="baseline_account_circle_white_24pt_1x.png" width="24" height="24"/>
         <image name="baseline_account_circle_white_24pt_3x.png" width="72" height="72"/>
-        <image name="outline_call_black_24pt_1x" width="24" height="24"/>
-        <image name="outline_email_black_24pt_2x" width="48" height="48"/>
+        <image name="callGray" width="220" height="229"/>
+        <image name="emailGray" width="225" height="225"/>
     </resources>
 </document>

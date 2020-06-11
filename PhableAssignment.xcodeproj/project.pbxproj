@@ -28,6 +28,7 @@
 		7999884424916EF400D8E1E5 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7999884324916EF400D8E1E5 /* ContactsModel.swift */; };
 		799988462491731C00D8E1E5 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799988452491731C00D8E1E5 /* ContactsViewModel.swift */; };
 		79998848249174E300D8E1E5 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79998847249174E300D8E1E5 /* Dynamic.swift */; };
+		79D538F52491E4CA0032A4B5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D538F42491E4CA0032A4B5 /* UIColor.swift */; };
 		AB6AA2428E55189EB37AC049 /* Pods_PhableAssignment_PhableAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFB5131030DE926A831ED75 /* Pods_PhableAssignment_PhableAssignmentUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		7999884324916EF400D8E1E5 /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
 		799988452491731C00D8E1E5 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		79998847249174E300D8E1E5 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		79D538F42491E4CA0032A4B5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		8CB039A88543CEF6F2AF807A /* Pods_PhableAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhableAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9353432B12E79A8FCA9F294 /* Pods-PhableAssignment-PhableAssignmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhableAssignment-PhableAssignmentUITests.release.xcconfig"; path = "Target Support Files/Pods-PhableAssignment-PhableAssignmentUITests/Pods-PhableAssignment-PhableAssignmentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7A69B51B2EAA8A176138736 /* Pods-PhableAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhableAssignmentTests.release.xcconfig"; path = "Target Support Files/Pods-PhableAssignmentTests/Pods-PhableAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				7999883924914A7700D8E1E5 /* ContactDetailsViewController.swift */,
 				799988452491731C00D8E1E5 /* ContactsViewModel.swift */,
 				79998847249174E300D8E1E5 /* Dynamic.swift */,
+				79D538F42491E4CA0032A4B5 /* UIColor.swift */,
 			);
 			path = PhableAssignment;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				799988012490EA7B00D8E1E5 /* AppDelegate.swift in Sources */,
 				7999880B2490EA7B00D8E1E5 /* PhableAssignment.xcdatamodeld in Sources */,
 				799988382490FB1B00D8E1E5 /* AddContactViewController.swift in Sources */,
+				79D538F52491E4CA0032A4B5 /* UIColor.swift in Sources */,
 				799988032490EA7B00D8E1E5 /* SceneDelegate.swift in Sources */,
 				799988462491731C00D8E1E5 /* ContactsViewModel.swift in Sources */,
 				799988352490F50100D8E1E5 /* ContactsListTableViewCell.swift in Sources */,

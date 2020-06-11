@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //         Do any additional setup after loading the view.
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         self.navigationController?.navigationBar.topItem?.title = "Contacts"
-        navigationController?.navigationBar.barTintColor =  UIColor.white
+        navigationController?.navigationBar.barTintColor =   UIColor(hexString: "#0b324e")
         self.navigationController?.navigationBar.isTranslucent = false
         self.contactsTable?.register(ContactsListTableViewCell.nib, forCellReuseIdentifier: ContactsListTableViewCell.identifier)
         let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showAddContactView))
